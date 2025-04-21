@@ -1,0 +1,8 @@
+cmake-no-debian
+cmake-no-rigctl
+conflicting-manpages
+0009-fix-ascidoctor-webfonts.patch
+0014-xsltproc-nonet-manpages.patch
+sounds-dir
+install-palettes
+cq-4char

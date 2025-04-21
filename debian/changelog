@@ -1,5 +1,30 @@
-template-repository (1.0-1) unstable; urgency=medium
+jtdx (2.2.159+improved-3) unstable; urgency=medium
 
-  * Initial release
+  * Allow up to 4 characters in "CQ xxxx <call>" messages.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Christoph Berg <myon@debian.org>  Tue, 18 Mar 2025 22:28:53 +0100
+
+jtdx (2.2.159+improved-2) unstable; urgency=medium
+
+  * Install sound files and waterfall palettes to /usr/share/jtdx/.
+
+ -- Christoph Berg <myon@debian.org>  Fri, 15 Mar 2024 10:36:33 +0100
+
+jtdx (2.2.159+improved-1) unstable; urgency=medium
+
+  * New upstream version 2.2.159+improved.
+  * Switch upstream to https://sourceforge.net/projects/jtdx-improved/.
+
+ -- Christoph Berg <myon@debian.org>  Thu, 14 Mar 2024 19:48:01 +0100
+
+jtdx (2.2.159-2) unstable; urgency=medium
+
+  * Disable stack-clash-protection on armel. (Closes: #1060850)
+
+ -- Christoph Berg <myon@debian.org>  Tue, 16 Jan 2024 16:30:53 +0100
+
+jtdx (2.2.159-1) unstable; urgency=medium
+
+  * Initial version.
+
+ -- Christoph Berg <myon@debian.org>  Fri, 24 Jun 2022 23:56:40 +0200

@@ -1,0 +1,10 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1311,6 +1311,7 @@ if (NOT UNIX)
+ 	
+ if (UNIX)
+   install (DIRECTORY
++  Palettes
+   ${PROJECT_SOURCE_DIR}/sounds
+   DESTINATION share/jtdx
+   #COMPONENT runtime
