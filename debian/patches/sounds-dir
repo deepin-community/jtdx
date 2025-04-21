@@ -1,0 +1,132 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1312,7 +1312,7 @@ if (NOT UNIX)
+ if (UNIX)
+   install (DIRECTORY
+   ${PROJECT_SOURCE_DIR}/sounds
+-  DESTINATION $ENV{HOME}
++  DESTINATION share/jtdx
+   #COMPONENT runtime
+   )
+   endif (UNIX)
+--- a/displaytext.cpp
++++ b/displaytext.cpp
+@@ -1342,7 +1342,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/MyCall.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/MyCall.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/MyCall.wav");  // for Linux and macOS
+ #endif
+             play_MyCall = false;
+             alertsTimer.start (1200);
+@@ -1357,7 +1357,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/DXCC.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/DXCC.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/DXCC.wav");  // for Linux and macOS
+ #endif
+             play_DXCC = false;
+             play_DXCCOB = false;
+@@ -1373,7 +1373,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/DXCCOnBand.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/DXCCOnBand.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/DXCCOnBand.wav");  // for Linux and macOS
+ #endif
+             play_DXCCOB = false;
+             alertsTimer.start (2000);
+@@ -1388,7 +1388,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/CQZone.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/CQZone.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/CQZone.wav");  // for Linux and macOS
+ #endif
+             play_CQZ = false;
+             play_CQZOB = false;
+@@ -1405,7 +1405,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/CQZoneOnBand.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/CQZoneOnBand.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/CQZoneOnBand.wav");  // for Linux and macOS
+ #endif
+             play_CQZOB = false;
+             alertsTimer.start (2000);
+@@ -1420,7 +1420,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/ITUZone.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/ITUZone.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/ITUZone.wav");  // for Linux and macOS
+ #endif
+             play_ITUZ = false;
+             play_ITUZOB = false;
+@@ -1436,7 +1436,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/ITUZoneOnBand.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/ITUZoneOnBand.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/ITUZoneOnBand.wav");  // for Linux and macOS
+ #endif
+             play_ITUZOB = false;
+             alertsTimer.start (2000);
+@@ -1451,7 +1451,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/Grid.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/Grid.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/Grid.wav");  // for Linux and macOS
+ #endif
+             play_Grid = false;
+             play_GridOB = false;
+@@ -1467,7 +1467,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/GridOnBand.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/GridOnBand.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/GridOnBand.wav");  // for Linux and macOS
+ #endif
+             play_GridOB = false;
+             alertsTimer.start (1800);
+@@ -1482,7 +1482,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/Px.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/Px.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/Px.wav");  // for Linux and macOS
+ #endif
+             play_Px = false;
+             alertsTimer.start (1200);
+@@ -1497,7 +1497,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/PxOnBand.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/PxOnBand.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/PxOnBand.wav");  // for Linux and macOS
+ #endif
+             play_PxOB = false;
+             play_CQ = false;
+@@ -1513,7 +1513,7 @@ void DisplayText::AudioAlerts()
+ #ifdef WIN32
+             QSound::play("./bin/sounds/CQ.wav");
+ #else
+-            QSound::play(QDir::homePath() + "/sounds/CQ.wav");  // for Linux and macOS
++            QSound::play("/usr/share/jtdx/sounds/CQ.wav");  // for Linux and macOS
+ #endif
+             play_CQ = false;
+             alertsTimer.start (1000);
+--- a/mainwindow.cpp
++++ b/mainwindow.cpp
+@@ -4076,7 +4076,7 @@ void MainWindow::readFromStdout()
+ #ifdef WIN32
+               QSound::play("./bin/sounds/DXcall.wav");
+ #else
+-              QSound::play(QDir::homePath() + "/sounds/DXcall.wav");  // for Linux and macOS
++              QSound::play("/usr/share/jtdx/sounds/DXcall.wav");  // for Linux and macOS
+ #endif
+               }
+               play_DXcall = false;

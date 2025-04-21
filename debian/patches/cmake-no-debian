@@ -1,0 +1,13 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1260,8 +1260,8 @@ if (UNIX)
+     add_dependencies (jtdx manpages)
+   endif (NOT WSJT_SKIP_MANPAGES)
+   if (NOT APPLE)
+-    add_subdirectory (debian)
+-    add_dependencies (jtdx debian)
++    #add_subdirectory (debian)
++    #add_dependencies (jtdx debian)
+   endif (NOT APPLE)
+ endif (UNIX)
+ 

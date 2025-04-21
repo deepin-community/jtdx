@@ -1,15 +1,50 @@
-Source: template-repository
-Section: unknown
+Source: jtdx
+Maintainer: Debian Hamradio Maintainers <debian-hams@lists.debian.org>
+Uploaders:
+ Christoph Berg <myon@debian.org>,
+Section: hamradio
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends:
+ asciidoc,
+ asciidoctor,
+ cmake,
+ debhelper-compat (= 13),
+ docbook-xsl,
+ gfortran,
+ libboost-dev,
+ libboost-log-dev,
+ libfftw3-dev,
+ libhamlib-dev (>= 4.1),
+ libqcustomplot-dev,
+ libqt5opengl5-dev,
+ libqt5serialport5-dev,
+ libqt5websockets5-dev,
+ libqwt-qt5-dev,
+ libsamplerate0-dev,
+ libudev-dev,
+ portaudio19-dev,
+ qtbase5-dev,
+ qtmultimedia5-dev,
+ qttools5-dev,
+ texinfo,
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/debian-hamradio-team/jtdx
+Vcs-Git: https://salsa.debian.org/debian-hamradio-team/jtdx.git
+Homepage: https://sourceforge.net/projects/jtdx-improved/
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: jtdx
+Architecture: linux-any
+Depends:
+ hamradio-files,
+ libhamlib-utils,
+ libqt5multimedia5-plugins,
+ libqt5sql5-sqlite,
+ wsjtx-data,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Weak-signal amateur radio communications, JTDX version
+ JTDX means "JT modes for DXing", it is being developed with main focus on the
+ sensitivity and decoding efficiency, both in overcrowded and half empty HF
+ band conditions. JTDX is forked from WSJT-X, a computer program dedicated to
+ amateur radio communication using very weak signals.

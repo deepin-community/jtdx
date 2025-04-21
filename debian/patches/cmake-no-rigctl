@@ -1,0 +1,30 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1279,27 +1279,6 @@ install (TARGETS jtdxjt9 wsprd_jtdx udp_
+   BUNDLE DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT runtime
+   )
+ 
+-install (PROGRAMS
+-  ${RIGCTL_EXE}
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-  #COMPONENT runtime
+-  RENAME rigctl-jtdx${CMAKE_EXECUTABLE_SUFFIX}
+-  )
+-
+-install (PROGRAMS
+-  ${RIGCTLD_EXE}
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-  #COMPONENT runtime
+-  RENAME rigctld-jtdx${CMAKE_EXECUTABLE_SUFFIX}
+-  )
+-
+-install (PROGRAMS
+-  ${RIGCTLCOM_EXE}
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-  #COMPONENT runtime
+-  RENAME rigctlcom-jtdx${CMAKE_EXECUTABLE_SUFFIX}
+-  )
+-
+ install (FILES
+   README
+   COPYING

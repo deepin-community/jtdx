@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+ifeq ($(DEB_TARGET_ARCH),armel)
+    export DEB_BUILD_MAINT_OPTIONS = hardening=-stackclash
+endif
+
 %:
 	dh $@
+
+override_dh_auto_configure:
+	# put documentation in /usr/share/doc/jtdx instead of .../JTDX
+	# don't install HTML documentation, it's the unmodified wsjtx document (in 2.2.159)
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_DOCDIR=share/doc/jtdx \
+		-DWSJT_GENERATE_DOCS=NO
